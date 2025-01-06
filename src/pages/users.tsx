@@ -1,6 +1,6 @@
 /** @format */
 
-import { useAppSelector } from "@/app/hook";
+import { useAppSelector } from "@/redux/hook";
 import { AddUserModal } from "@/components/module/users/addUserModal";
 import UserCard from "@/components/module/users/userCard";
 import { selectUsers } from "@/features/user/userSlice";

@@ -6,7 +6,7 @@ import { PayloadAction } from "@reduxjs/toolkit";
 
 import { IUser } from "@/types";
 import { createSlice, nanoid } from "@reduxjs/toolkit";
-import { RootState } from "@/app/store";
+import { RootState } from "@/redux/store";
 
 interface InitialState {
    users: IUser[];

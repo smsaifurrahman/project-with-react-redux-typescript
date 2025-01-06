@@ -5,7 +5,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { Provider } from "react-redux";
-import { store } from "./app/store.ts";
+import { store } from "./redux/store.ts";
 import { RouterProvider } from "react-router-dom";
 import routes from "./routes/route.tsx";
 import { ThemeProvider } from "./providers/theme-provider.tsx";

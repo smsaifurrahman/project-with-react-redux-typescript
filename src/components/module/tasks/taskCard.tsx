@@ -5,7 +5,7 @@ import { ITask } from "@/types";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Trash2 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useAppDispatch, useAppSelector } from "@/app/hook";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { deleteTask, toggleCompleteState } from "@/features/task/taskSlicer";
 import { selectUsers } from "@/features/user/userSlice";
 

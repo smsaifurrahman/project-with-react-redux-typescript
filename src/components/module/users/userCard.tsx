@@ -1,6 +1,6 @@
 /** @format */
 
-import { useAppDispatch } from "@/app/hook";
+import { useAppDispatch } from "@/redux/hook";
 import { Button } from "@/components/ui/button";
 import { removeUser } from "@/features/user/userSlice";
 import { IUser } from "@/types";

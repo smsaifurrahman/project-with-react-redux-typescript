@@ -3,13 +3,13 @@ import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
 
 
-import { RootState } from './app/store'
+import { RootState } from './redux/store'
 import Navbar from './components/layout/Navbar'
 import { Outlet } from 'react-router-dom'
 
 function App() {
-  const count = useSelector((state: RootState) => state.counter.value)
-  const dispatch = useDispatch()
+  // const count = useSelector((state: RootState) => state.counter.value)
+  // const dispatch = useDispatch()
 
   return (
     <div>

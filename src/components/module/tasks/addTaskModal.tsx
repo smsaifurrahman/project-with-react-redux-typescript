@@ -1,6 +1,6 @@
 /** @format */
 
-import { useAppDispatch, useAppSelector } from "@/app/hook";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -43,15 +43,25 @@ import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useCreateTaskMutation } from "@/redux/api/baseApi";
 
 
 export function AddTaskModal() {
+
    const [open, setOpen] = useState(false)
    const form = useForm();
    const dispatch = useAppDispatch();
    const users = useAppSelector(selectUsers)
 
-   const onSubmit : SubmitHandler<FieldValues> = (data) => {
+   const [createTask, {data, isLoding, isError}] = useCreateTaskMutation();
+
+   const onSubmit : SubmitHandler<FieldValues> = async (data) => {
+      const taskData = {
+         ...data, isCompleted: false,
+      };
+
+   const res = await createTask(taskData).unwrap()
+
       console.log(data);
       dispatch(addTask(data as ITask));
       setOpen(false);
